@@ -11,7 +11,7 @@ namespace p1DataStruct
             Console.WriteLine("Press anykey to end program");
             Console.ReadKey();
         }
-       
+      
         //creat structure for team
         struct Team
         {
@@ -27,6 +27,13 @@ namespace p1DataStruct
                 this.tier = tier;
                 this.positioninleague = posiitioninleague;
             }
+            
+
+            //method in struct to set team
+            public void SetTeam()
+            {
+                this.name = Console.ReadLine();
+            }        
         }
 
         //create struct for player
@@ -37,8 +44,7 @@ namespace p1DataStruct
             public string name;
             public string dob;
             public string position;
-
-
+           
             //constructor for player
             public Player(string team, int shirtNumber, string name, string dob, string position)
             {
@@ -55,14 +61,22 @@ namespace p1DataStruct
             //create team with constructor
             Team t1 = new Team("AFCCrewe", "02/02/02", 14, 1);
 
+            
             //create player with constructor
             Player p1 = new Player("AFCCrewe", 7, "Tom Laight", "02/02/02", "CDM");
             Player p2 = new Player("AFCCrewe", 8, "Ronaldo", "02/02/95", "Striker");
 
+
+            Console.WriteLine("The current team name is:");
+            Console.WriteLine(t1.name);
+
+            //Change team name using SetTeam method
+            Console.WriteLine("Change the team name:");
+            t1.SetTeam();
+
+
+            Console.WriteLine(p1.name + " plays for " + t1.name);
             
-
-
-            Console.WriteLine(p1.name);
 
             EndProgram();
         }
